@@ -2,9 +2,7 @@ package com.dslearn.entities;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_topic")
@@ -32,6 +30,13 @@ public class Topic {
     @JoinColumn(name = "offer_id")
     private Offer offer;
 
+    @ManyToOne
+    @JoinColumn(name = "reply_id")
+    private Reply answer;
+
+    @OneToMany(mappedBy = "topic")
+    private List<Reply> replies = new ArrayList<>();
+
     @ManyToMany
     @JoinTable(name = "tb_topic_likes",
             joinColumns = @JoinColumn(name = "topic_id"),
@@ -41,7 +46,8 @@ public class Topic {
     public Topic() {
     }
 
-    public Topic(Long id, String title, String body, Instant moment, User author, Lesson lesson, Offer offer) {
+    public Topic(Long id, String title, String body, Instant moment,
+                 User author, Lesson lesson, Offer offer, Reply answer) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -49,6 +55,7 @@ public class Topic {
         this.author = author;
         this.lesson = lesson;
         this.offer = offer;
+        this.answer = answer;
     }
 
     public Long getId() {
@@ -109,6 +116,18 @@ public class Topic {
 
     public Set<User> getLikes() {
         return likes;
+    }
+
+    public Reply getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(Reply answer) {
+        this.answer = answer;
+    }
+
+    public List<Reply> getReplies() {
+        return replies;
     }
 
     @Override
