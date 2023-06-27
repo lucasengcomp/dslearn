@@ -21,3 +21,14 @@ INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('2.0
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha Quarkus', 'Trilha principal do curso', 1, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha AWS', 'Tire suas dúvidas sobre AWS', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha CHATBOTS', 'Lives exclusivas para a turma', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 0, 1);
+
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 1 aula 3 do bootcamp Quarkus', 'http://dslearn.com.br/1/quarkus/3', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', true, 1);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 2 aula 5 do bootcamp Quarkus', 'http://dslearn.com.br/2/quarkus/5', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', false, 1);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 3 aula 2 do bootcamp Quarkus', 'http://dslearn.com.br/3/quarkus/2', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', true, 1);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 1 aula 3 do bootcamp Quarkus', 'http://dslearn.com.br/1/quarkus/3', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', true, 2);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 2 aula 5 do bootcamp Quarkus', 'http://dslearn.com.br/2/quarkus/5', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', false, 2);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 3 aula 2 do bootcamp Quarkus', 'http://dslearn.com.br/3/quarkus/2', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', true, 2);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 1 aula 3 do bootcamp Quarkus', 'http://dslearn.com.br/1/quarkus/3', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', false, 3);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 2 aula 5 do bootcamp Quarkus', 'http://dslearn.com.br/2/quarkus/5', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', true, 3);
+INSERT INTO tb_notification (text, route, moment, read, user_id) VALUES ('Nova atualização no módulo 3 aula 2 do bootcamp Quarkus', 'http://dslearn.com.br/3/quarkus/2', TIMESTAMP WITH TIME ZONE '2021-12-20T09:15:00Z', false, 3);
+
