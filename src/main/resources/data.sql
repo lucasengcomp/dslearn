@@ -56,3 +56,13 @@ INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
 
 INSERT INTO tb_deliver (uri, moment, status, feedback, correct_Count, lesson_id, user_id, offer_id) VALUES ('https://github.com/lucasengcomp/dslearn', TIMESTAMP WITH TIME ZONE '2023-06-27T10:00:00Z', 0, null, null, 4, 1, 1);
+
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Conceitos iniciais 1', 'Demonstraremos os conceitos básicos para iniciar em programação', TIMESTAMP WITH TIME ZONE '2023-06-12T13:00:00Z', 1, 1, 1);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Conceitos computacionais 2', 'Demonstraremos os conceitos intermediários para iniciar em programação', TIMESTAMP WITH TIME ZONE '2023-06-13T13:00:00Z', 2, 1, 1);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Arquitetura com Quarkus 1', 'Vamos abordar sobre arquitetura básica em Quarkus', TIMESTAMP WITH TIME ZONE '2023-06-14T13:00:00Z', 2, 1, 1);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Arquitetura com Quarkus 2', 'Tópicos fundamentais usando tecnologia web', TIMESTAMP WITH TIME ZONE '2023-06-15T13:00:00Z', 1, 1, 2);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Arquitetura com Quarkus 3', 'Veremos a aplicabilidade dos conceitos 1 e 2', TIMESTAMP WITH TIME ZONE '2023-06-16T13:00:00Z', 1, 1, 2);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Tópicos avançados', 'Nesse momento, iremos abordar sobre tópicos mais avançados de Quarkus', TIMESTAMP WITH TIME ZONE '2023-06-17T13:00:00Z', 2, 1, 3);
+
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (1, 2);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (2, 1);
