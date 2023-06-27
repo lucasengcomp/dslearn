@@ -15,12 +15,16 @@ public class Deliver implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String uri;
 
+    private String feedback;
+
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant moment;
 
     private DeliverStatus status;
-    private String feedback;
+
     private Integer correctCount;
 
     @ManyToOne

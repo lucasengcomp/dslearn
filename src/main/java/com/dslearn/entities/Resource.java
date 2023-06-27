@@ -17,10 +17,16 @@ public class Resource implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
+
     private String description;
+
     private Integer position;
+
+    @Column(name = "img_uri")
     private String imgUri;
+
     private ResourceType type;
 
     @ManyToOne

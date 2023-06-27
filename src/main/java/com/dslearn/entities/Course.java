@@ -14,9 +14,15 @@ public class Course implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
+
     private String name;
+
+    @Column(name = "img_uri")
     private String imgUri;
+
+    @Column(name = "img_gray_uri")
     private String imgGrayUri;
 
     @OneToMany(mappedBy = "course")

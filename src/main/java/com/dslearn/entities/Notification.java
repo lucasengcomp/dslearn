@@ -13,6 +13,8 @@ public class Notification implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(length = 150)
     private String text;
     private String route;
 

@@ -12,10 +12,14 @@ public class Section implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
-    private String description;
-    private Integer position;
+
     private String imgUri;
+
+    private String description;
+
+    private Integer position;
 
     @ManyToOne
     @JoinColumn(name = "resource_id")
