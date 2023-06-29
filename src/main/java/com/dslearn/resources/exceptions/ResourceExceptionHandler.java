@@ -1,7 +1,10 @@
 package com.dslearn.resources.exceptions;
 
+import com.dslearn.config.OAuthCustomError;
 import com.dslearn.service.exceptions.DataBaseException;
+import com.dslearn.service.exceptions.ForbiddenException;
 import com.dslearn.service.exceptions.ResourceNotFoundException;
+import com.dslearn.service.exceptions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -42,6 +45,18 @@ public class ResourceExceptionHandler {
         fieldWithErrors(e, error);
 
         return ResponseEntity.status(status).body(error);
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<OAuthCustomError> forbidden(ForbiddenException e) {
+        OAuthCustomError error = new OAuthCustomError("Forbidden", e.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+    }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<OAuthCustomError> unauthorized(UnauthorizedException e) {
+        OAuthCustomError error = new OAuthCustomError("Unauthorized", e.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
     }
 
     private static void fieldWithErrors(MethodArgumentNotValidException e, ValidationError error) {
