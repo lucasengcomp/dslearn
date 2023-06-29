@@ -21,7 +21,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Autowired
     private JwtTokenStore tokenStore;
 
-    private static final String[] PULIC = {"/oauth/token", "/h2-console/**"};
+    private static final String[] PUBLIC = {"/oauth/token", "/h2-console/**"};
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
@@ -36,9 +36,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         }
 
         http.authorizeRequests()
-                .antMatchers(PULIC)
+                .antMatchers(PUBLIC)
                 .permitAll()
                 .anyRequest()
-                .hasAnyRole("ADMIN");
+                .authenticated();
     }
 }
