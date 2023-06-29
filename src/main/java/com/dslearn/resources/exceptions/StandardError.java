@@ -1,4 +1,4 @@
-package com.dslearn.controllers.exeptions;
+package com.dslearn.resources.exceptions;
 
 import java.io.Serializable;
 import java.time.Instant;

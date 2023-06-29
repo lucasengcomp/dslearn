@@ -1,6 +1,6 @@
-package com.dslearn.controllers.exeptions;
+package com.dslearn.resources.exceptions;
 
-import com.dslearn.service.exceptions.DataBaeException;
+import com.dslearn.service.exceptions.DataBaseException;
 import com.dslearn.service.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import javax.servlet.http.HttpServletRequest;
 import java.time.Instant;
 
-import static com.dslearn.controllers.exeptions.Utils.*;
+import static com.dslearn.resources.exceptions.Utils.*;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -25,8 +25,8 @@ public class ResourceExceptionHandler {
         return ResponseEntity.status(status).body(error);
     }
 
-    @ExceptionHandler(DataBaeException.class)
-    public ResponseEntity<StandardError> database(DataBaeException e, HttpServletRequest request) {
+    @ExceptionHandler(DataBaseException.class)
+    public ResponseEntity<StandardError> database(DataBaseException e, HttpServletRequest request) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         StandardError error = new StandardError();
         patternMessage(error, status, DATABASE_EXCEPTION, e.getMessage(), request);

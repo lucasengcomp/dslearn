@@ -1,9 +1,9 @@
 package com.dslearn.service.exceptions;
 
-public class DataBaeException extends RuntimeException {
+public class DataBaseException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-    public DataBaeException(String msg) {
+    public DataBaseException(String msg) {
         super(msg);
     }
 }
